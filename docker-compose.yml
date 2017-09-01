@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  app:
+    image: pottava/golang:1.9-builder
+    command: go run /go/src/github.com/pottava/http-something-wrong/main.go
+    ports:
+      - 80:80
+    volumes:
+      - .:/go/src/github.com/pottava/http-something-wrong
+    environment:
+      - ACCESS_LOG
+      - CONTENT_ENCODING
+    container_name: app

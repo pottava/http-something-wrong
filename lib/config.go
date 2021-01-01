@@ -24,7 +24,7 @@ func init() {
 		contentEncoding = b
 	}
 	Config = &config{
-		Port:            Env("APP_PORT", "80"),
+		Port:            Env("PORT", "80"),
 		AccessLog:       accessLog,
 		ContentEncoding: contentEncoding,
 	}

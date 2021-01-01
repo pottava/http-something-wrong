@@ -1,7 +1,11 @@
 # HTTP-Something-Wrong
 
+[![GitHub Actions](https://github.com/pottava/http-something-wrong/workflows/Publish%20artifacts/badge.svg?branch=master)](https://github.com/pottava/http-something-wrong/actions)
+
+[gcr.io/pottava/errs](https://gcr.io/pottava/errs/)
+
 Supported tags and respective `Dockerfile` links:  
-・latest ([prod/Dockerfile](https://github.com/pottava/http-something-wrong/blob/master/prod/Dockerfile))
+・v1.1 ([Dockerfile](https://github.com/pottava/http-something-wrong/blob/master/Dockerfile))
 
 ## Usage
 
@@ -14,16 +18,7 @@ CONTENT_ENCODING          | Compress response data if the request allows. (defau
 
 ### 2. Run the application
 
-`$ docker run -d -p 9000:80 pottava/http-sw`
-
-* with docker-compose.yml:  
-
-```
-errors:
-  image: pottava/http-sw
-  ports:
-    - 9000:80
-  environment:
-    - ACCESS_LOG=false
-  container_name: errors
+```bash
+$ docker run -d --rm -p 8080:8080 gcr.io/pottava/errs:v1.1
+$ open http://localhost:8080
 ```
